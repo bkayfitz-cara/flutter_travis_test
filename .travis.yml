@@ -10,7 +10,7 @@ matrix:
 
   include:
     # Runs unit tests without emulators.
-    - env: JOB=PR
+    - env: JOB=TEST
       os: linux
       language: generic
       sudo: false
@@ -23,7 +23,7 @@ matrix:
             - libstdc++6
             - fonts-droid
       before_script:
-        - git clone https://github.com/flutter/flutter.git -b alpha --depth 1
+        - git clone https://github.com/flutter/flutter.git -b dev --depth 1
       script:
         - ./flutter/bin/flutter test
 
